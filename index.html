@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <!-- Estilo para Tabela do Relatorio de Vendas  -->
+    <style>
+      table, td, tr {
+        border: 1px solid black;
+      }
+    </style>
+</head>
+
+<body>
+<h1> Posto  de  Gasolina  Vulcan </h1>
+
+<!-- Menu  -->
+<fieldset  style="width:380px">
+    <legend align="center"> <b>O p ç õ e s</b></legend>
+   
+        <input type="button" id="btnVC" value="Venda Combustivel" />
+        <input type="button" id="btnRV" value="Relatorio de Vendas" />
+        <input type="button" id="btnFim" value="FIM" />
+ </fieldset>
+
+<div id="divId1" style="display:none">
+  <fieldset  style="width:380px">
+    <legend> <strong>Quantidade de Litros No Tanque </strong> </legend>
+    <center>    <h2 id="qtdT" ></h2> </center> 
+
+   <!-- Pedido Cliente  -->
+    <fieldset style="width:300px">
+      <legend> <strong>  Pedido Cliente  </strong> </legend>
+      Quantidade de Litros :
+      <input type="number" name="productId" id="productId" 
+        min="00" maxlength="4" size="4" required />
+      <input type="button" id="abast" value="Abastecer" />
+    </fieldset>
+    
+  </fieldset>
+
+</div>
+
+<!-- Verifica se Cliente aceita qtd litros menor que pedido  -->
+<div id="divId2"  style="display:none"  >
+  <fieldset  style="width:380px">
+    <legend>Cliente aceita ? </legend>
+    <label>Abastecer somente o que tem no tanque </label>
+    <input type="button" id="btnSim" value="SIM" />
+    <input type="button" id="btnNao" value="NÃO" />
+  </fieldset>
+</div>
+
+<!-- Registrar Vendas  -->
+<div id="divId3" style="display:none" >
+  <fieldset  style="width:380px">
+    <legend>Informações da Venda</legend>
+    <label>Valor a Pagar : R$ </label>
+    <input type="text" id="txtValor" name="dado" size="15" disabled /> <br><br>
+    <label>Forma de Pagamento </label>
+    <input type="radio" id="rdCartao" name="dadord" value="cartao" /> Cartão
+    <input type="radio" id="rdDinheiro" name="dadord" value="dinheiro" /> Dinheiro
+    <br><br>
+    <label> Nome do Cliente : </label>
+    <input type="text" id="txtNome" name="dado" required /> <br><br>
+    <label>Telefone do Cliente : </label>
+    <input type="text" id="txtTel" name="dado1" size="15" required /> <br><br>
+    <input type="button" id="btnRegistrar" value="Registrar Venda" />
+    <input type="button" id="btnCancel" value="Cancelar Venda" />
+  </fieldset>
+   
+</div>
+
+<!-- Relatorio Vendas  -->
+<div id="myRel" class="relatorio" style="display:none"> 
+    <div id="container"></div>
+      <input type='button' id='btnClose' value='Fechar Relatorio' />;
+    </div>  
+
+</div>
+
+<script src="postogasolina.js"></script> 
+</body>
+</html>
